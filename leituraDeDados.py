@@ -19,7 +19,7 @@ def interpretaPlanilha(caminhoPlanilha):
             "uf":row["NO_UF"],
             "codigo_municipio":row["CO_MUNICIPIO"],    
             "nome_municipio": row["NO_MUNICIPIO"],
-            "localização":row["TIPOLOCA"],
+            "localizacao":row["TIPOLOCA"],
             "dependencia":row["DEPENDAD"],
             "taxa_promocao":{
                 "ensino_fundamental":{
