@@ -1,11 +1,11 @@
 import pandas as pd 
 
-def importaPlanilia():
-    caminhoPlanialia = './TX_TRANSICAO_MUNICIPIOS_2019_2020/TX_TRANSICAO_MUNICIPIOS_2019_2020.xlsx'
+def interpretaPlanilha(caminhoPlanilha):
+    #caminhoPlanilha = './TX_TRANSICAO_MUNICIPIOS_2019_2020/TX_TRANSICAO_MUNICIPIOS_2019_2020.xlsx'
 
     #leitura da planinilia
     print('Lendo planilha...')
-    df = pd.read_excel(caminhoPlanialia, skiprows=8)
+    df = pd.read_excel(caminhoPlanilha, skiprows=8)
     # Verificar os dados lidos
     print(df.head())
 
@@ -114,5 +114,4 @@ def importaPlanilia():
     #Fim CoNVERTENDO  dados em dicionario
     print('Planilha interpretada com sucesso')
 
-
-importaPlanilia()
+    return documentos

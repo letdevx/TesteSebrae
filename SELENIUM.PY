@@ -9,6 +9,7 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from pymongo import MongoClient
+from leituraDeDados import interpretaPlanilha
 
 #ssl.create_default_context(cafile=certifi.where())
 
@@ -80,31 +81,17 @@ try:
 
     client = MongoClient(connection_string, tls=False)
     db = client["TesteSebrae"]
-    colecao = db["TesteSebrae.taxa_transicao/tx_transicao_municipios"]
+    colecao = db["tx_transicao_municipios"]
     print('DB is up')
 
     # Caminho para o arquivo Excel (xlsx)
-    xlsx_file = "/Users/letdevx/workspace/TesteSebrae/TX_TRANSICAO_MUNICIPIOS_2019_2020/TX_TRANSICAO_MUNICIPIOS_2019_2020.xlsx"
-    print('caminho ok')
-    # Ler o arquivo Excel usando pandas
-    data = pd.read_excel(xlsx_file, engine='openpyxl', skiprows=5)
-    print('arquivo lido')
-
-    # Converter o DataFrame pandas em uma lista de dicionários
-    data_dict = data.to_dict(orient="records")
-    print('dataframe convertido')
+    xlsx_file = "./TX_TRANSICAO_MUNICIPIOS_2019_2020/TX_TRANSICAO_MUNICIPIOS_2019_2020.xlsx"
+    documentos = interpretaPlanilha(xlsx_file)
 
     # Inserir os dados no MongoDB
-    colecao.insert_many(data_dict)
-
-    # for i, linha in enumerate(data_dict):
-    #     colecao.insert_one(linha)
+    colecao.insert_many(documentos)
 
     print("Dados inseridos com sucesso no MongoDB.")
-
-
-
-
 
 except ssl.SSLError as err:
    print(f"Erro SSL: {err}")
