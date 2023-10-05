@@ -9,7 +9,7 @@
             "name": "Python",
             "type": "python",
             "request": "launch",
-            "program": "${workspaceFolder}/SELENIUM.PY",
+            "program": "${workspaceFolder}/AllTeste/DownloadPlanilha.py",
             "console": "integratedTerminal",
             "justMyCode": true
         }
