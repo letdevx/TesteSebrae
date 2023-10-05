@@ -1,13 +1,19 @@
-import pandas as pd 
+import pandas as pd
 
-def interpretaPlanilha(caminhoPlanilha):
-    #caminhoPlanilha = './TX_TRANSICAO_MUNICIPIOS_2019_2020/TX_TRANSICAO_MUNICIPIOS_2019_2020.xlsx'
+RESET = "\033[0m"        # Reseta a formatação
+BOLD = "\033[1m"         # Texto em negrito
+UNDERLINE = "\033[4m"    # Texto sublinhado
+RED = "\033[91m"         # Texto vermelho
+GREEN = "\033[92m"       # Texto verde
+YELLOW = "\033[93m"      # Texto amarelo
+BLUE = "\033[94m"        # Texto azul
+
+
+def InterpretaPlanilha(caminhoPlanilha):
 
     #leitura da planinilia
     print('Lendo planilha...')
     df = pd.read_excel(caminhoPlanilha, skiprows=8)
-    # Verificar os dados lidos
-    print(df.head())
 
     #Iincio CoNVERTENDO  dados em dicionario
     documentos = []
@@ -112,6 +118,6 @@ def interpretaPlanilha(caminhoPlanilha):
         }   
         documentos.append(documento)
     #Fim CoNVERTENDO  dados em dicionario
-    print('Planilha interpretada com sucesso')
+    print(GREEN + " \u2714 \033[1m Planilha interpretada com sucesso"+ RESET)
 
     return documentos

@@ -1,4 +1,7 @@
 **/*.zip
+**/*.csv
+**/*.xlsx
+**/*.ods
 venv/
 TX_TRANSICAO_MUNICIPIOS_2019_2020/
 **/.DS_Store

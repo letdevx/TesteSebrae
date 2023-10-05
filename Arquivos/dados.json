@@ -1,0 +1,97 @@
+{
+    "ano": "2019/2020",
+    "regiao": "Norte",
+    "uf": "RO",
+    "codigo_municipio": 1100015,
+    "nome_municipio": "Alta Floresta D'Oeste",
+    "localizacao": "urbana",
+    "dependencia_administrativa": "publica",
+    "taxa_promocao": {
+        "ensino_fundamental": {
+            "total": 92.7,
+            "anos_iniciais": 93.9,
+            "anos_finais": 91.4,
+            "ano1": 96.6,
+            "ano2": 96.6,
+            "ano3": 96.6,
+            "ano4": 96.6,
+            "ano5": 96.6,
+            "ano6": 96.6,
+            "ano7": 96.6,
+            "ano8": 96.6,
+            "ano9": 96.6
+        },
+        "ensino_medio": {
+            "total": 86.2,
+            "ano1": 84.4,
+            "ano2": 80.8,
+            "ano3": 94.8
+        }
+    },
+    "taxa_repetencia": {
+        "ensino_fundamental": {
+            "total": 92.7,
+            "anos_iniciais": 93.9,
+            "anos_finais": 91.4,
+            "ano1": 96.6,
+            "ano2": 96.6,
+            "ano3": 96.6,
+            "ano4": 96.6,
+            "ano5": 96.6,
+            "ano6": 96.6,
+            "ano7": 96.6,
+            "ano8": 96.6,
+            "ano9": 96.6
+        },
+        "ensino_medio": {
+            "total": 86.2,
+            "ano1": 84.4,
+            "ano2": 80.8,
+            "ano3": 94.8
+        }
+    },
+    "taxa_evasao": {
+        "ensino_fundamental": {
+            "total": 92.7,
+            "anos_iniciais": 93.9,
+            "anos_finais": 91.4,
+            "ano1": 96.6,
+            "ano2": 96.6,
+            "ano3": 96.6,
+            "ano4": 96.6,
+            "ano5": 96.6,
+            "ano6": 96.6,
+            "ano7": 96.6,
+            "ano8": 96.6,
+            "ano9": 96.6
+        },
+        "ensino_medio": {
+            "total": 86.2,
+            "ano1": 84.4,
+            "ano2": 80.8,
+            "ano3": 94.8
+        }
+    },
+    "migracao_eja": {
+        "ensino_fundamental": {
+            "total": 92.7,
+            "anos_iniciais": 93.9,
+            "anos_finais": 91.4,
+            "ano1": 96.6,
+            "ano2": 96.6,
+            "ano3": 96.6,
+            "ano4": 96.6,
+            "ano5": 96.6,
+            "ano6": 96.6,
+            "ano7": 96.6,
+            "ano8": 96.6,
+            "ano9": 96.6
+        },
+        "ensino_medio": {
+            "total": 86.2,
+            "ano1": 84.4,
+            "ano2": 80.8,
+            "ano3": 94.8
+        }
+    }
+} 
