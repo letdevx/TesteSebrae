@@ -1,4 +1,5 @@
 from pymongo import MongoClient
+from config_loader import config
 
 # Inicio Configuração de cores no terminal.
 GREEN = "\033[92m"       
@@ -8,12 +9,9 @@ RED = "\033[91m"
 # Fim Configuração de cores no terminal. 
 
 def SalvaDocumentosDB(documentos):
-    # Inicio conexao com o banco de dados
+    """"""
     try:
-        # TODO: mover Configuração do MongoDB para config
-        #connection_string = "mongodb+srv://leticiasistemasads:Devx@cluster0.rrh7i0u.mongodb.net/?retryWrites=true&w=majority"
-        connection_string = "mongodb://root:example@localhost/?retryWrites=true&w=majority"
-
+        connection_string = config['database']['connection_string']
         client = MongoClient(connection_string, tls=False)
         db = client["TesteSebrae"]
         colecao = db["tx_transicao_municipios"]
@@ -27,4 +25,4 @@ def SalvaDocumentosDB(documentos):
     except Exception as err:
         print(RED + f"Erro: {err}" + RESET)
     
-    # Fim conexao com o banco de dados
+    

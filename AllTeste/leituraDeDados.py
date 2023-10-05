@@ -10,6 +10,7 @@ BLUE = "\033[94m"        # Texto azul
 
 
 def InterpretaPlanilha(caminhoPlanilha):
+    """Realiza a leitura da planilha apontada"""
 
     #leitura da planinilia
     print('Lendo planilha...')

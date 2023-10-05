@@ -13,6 +13,7 @@ RED = "\033[91m"
 # Fim Configuração de cores no terminal. 
 
 def DownloadPlanilha(URL):
+    """Realiza o download de um arquivo especificado pela URL"""
     
     try:
         # Obtém o diretório corrente do script
@@ -31,7 +32,7 @@ def DownloadPlanilha(URL):
         download = os.path.join(script_dir, '..')
 
         # Inicializa o ChromeDriver usando webdriver_manager
-        service = Service(executable_path=ChromeDriverManager().install())
+        service = Service(executable_path=ChromeDriverManager().install()) #fornecer o caminho par o selenium 
         driver = webdriver.Chrome(service=service, options=chrome_options)
 
         # Abre a URL
@@ -42,8 +43,9 @@ def DownloadPlanilha(URL):
         arquivo_caminho = ''
         while True:
              # Verifica se existe um arquivo .crdownload no diretório de download
+             arquivos_crdownload = (f for f in os.listdir(download) if f.endswith('.crdownload'))
              arquivo_em_download = next(
-                 (f for f in os.listdir(download) if f.endswith('.crdownload')),
+                 arquivos_crdownload,
                  None
              )
 
