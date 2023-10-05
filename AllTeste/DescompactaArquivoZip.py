@@ -8,15 +8,8 @@ BOLD = "\033[1m"
 RED = "\033[91m"
 # Fim Configuração de cores no terminal. 
 
-# Obtém o diretório corrente do script
-script_dir = os.path.dirname(os.path.abspath(__file__))
-
-def Descompactazip():
+def Descompactazip(zip_filepath):
     try:
-        #Inicio descompacta arquivo zip
-        download_dir = script_dir
-        zip_filename = 'tx_transicao_municipios_2019_2020.zip'
-        zip_filepath = os.path.join(download_dir, zip_filename)
         if (os.path.exists(zip_filepath)):
             with zipfile.ZipFile(zip_filepath, 'r') as zip_ref:
                 zip_ref.extractall()

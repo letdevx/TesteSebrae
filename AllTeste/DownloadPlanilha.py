@@ -12,7 +12,7 @@ BOLD = "\033[1m"
 RED = "\033[91m"
 # Fim Configuração de cores no terminal. 
 
-def DownloadPlanilha():
+def DownloadPlanilha(URL):
     
     try:
         # Obtém o diretório corrente do script
@@ -34,13 +34,12 @@ def DownloadPlanilha():
         service = Service(executable_path=ChromeDriverManager().install())
         driver = webdriver.Chrome(service=service, options=chrome_options)
 
-        # URL direta para o arquivo zip
-        URL = 'https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/taxa_transicao/tx_transicao_municipios_2019_2020.zip'
-
         # Abre a URL
         driver.get(URL)
+        time.sleep(2)
 
         #Monitora o progresso do download
+        arquivo_caminho = ''
         while True:
              # Verifica se existe um arquivo .crdownload no diretório de download
              arquivo_em_download = next(
@@ -59,6 +58,7 @@ def DownloadPlanilha():
              time.sleep(1)  # Aguarde 1 segundo antes de verificar novamente
          # Fecha o navegador
         driver.quit()
+        return arquivo_caminho.removesuffix('.crdownload')
     
     except Exception as erro:
         print( RED + f"Erro: {str(erro)}" + RESET)
