@@ -37,6 +37,4 @@ def PlotagemGrafico(documentos):
 
     # Salvar o arquivo Excel
     wb.save("taxa_transicao_ariquemes.xlsx")
-    
-    print("fim")
      
