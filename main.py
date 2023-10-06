@@ -1,7 +1,8 @@
 from AllTeste.DownloadPlanilha import DownloadPlanilha 
 from AllTeste.leituraDeDados import InterpretaPlanilha
 from AllTeste.DescompactaArquivoZip import Descompactazip
-from AllTeste.Persistencia import SalvaDocumentosDB
+from AllTeste.Persistencia import SalvaDocumentosDB, ObtemTaxaTransicaoMunicipio
+from AllTeste.PlotagemGrafico import PlotagemGrafico
 import os
 from config_loader import config
 
@@ -12,5 +13,9 @@ caminho_planilha = os.path.join(script_dir, config['planilha']['pasta'], config[
 
 # caminho_planilha_zip = DownloadPlanilha(URL)
 # Descompactazip(caminho_planilha_zip)
-documentos = InterpretaPlanilha(caminho_planilha)
-SalvaDocumentosDB(documentos)
+#documentos = InterpretaPlanilha(caminho_planilha)
+#SalvaDocumentosDB(documentos)
+
+documentos_filtrados = ObtemTaxaTransicaoMunicipio(codigo_municipio=1100023)
+PlotagemGrafico(documentos_filtrados)
+print('Fim')
